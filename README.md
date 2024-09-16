@@ -144,4 +144,6 @@
 - **Compliance with Standards:**
   - Ensure the contract adheres to relevant TON standards and best practices.
 
+--- 
+
 By following this checklist, you can systematically assess the security and robustness of TON smart contracts, identifying potential vulnerabilities and ensuring reliable operation within the TON ecosystem.
