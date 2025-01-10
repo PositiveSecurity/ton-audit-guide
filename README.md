@@ -85,7 +85,7 @@
 - **Key and Magic Number Verification:**
   - **Consistency:**
     - Ensure all keys and magic numbers in message formation align with the contract logic.
-    - [TON Documentation "Messeges"](https://docs.ton.org/develop/smart-contracts/messages)
+    - [TON Documentation "Messages"](https://docs.ton.org/develop/smart-contracts/messages)
   - **Resource Management:**
     - Check that message parameters do not deplete the contract's balance unduly, especially regarding storage payments.
 
