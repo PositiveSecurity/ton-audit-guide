@@ -1,28 +1,29 @@
 # Checklist for Auditing TON Smart Contracts
 
+**Note.** This checklist is a specialized version developed for the paper titled *"From Paradigm Shift to Audit Rift: Exploring Vulnerabilities and Audit Tips for TON Smart Contracts."* A summary table of vulnerabilities, along with detailed findings, is available in both [Markdown](https://github.com/YuryYa/ton-audit-guide/blob/main/Vulnerabilities%20from%20Reports.md) and [CSV](https://github.com/YuryYa/ton-audit-guide/blob/main/Vulnerabilities%20from%20Reports.csv) formats in this repository branch.
+
 ## General
 
 - **Mapping Message Flows:**
   - Map all message flows of the contract to understand how messages are processed and routed.
-- **Key Questions:**
-  - **Partial Execution of Transactions:**
-    - What happens if a transaction is **partially executed** due to gas exhaustion?
-    - How does the contract handle partial execution?
-  - **Entry Points:**
-    - Identify all **entry points** of the contract.
-  - **Input Data Processing:**
-    - How are **input data** and incoming messages processed?
-    - Are incoming errors appropriately handled?
-  - **Authorization Checks:**
-    - Are there **authorization checks** for all functions and message handlers?
-  - **Contract Design and Centralization:**
-    - Examine the contract structure for any unnecessary **centralization**.
-  - **External Message Handling:**
-    - How does the contract handle **external messages**?
-    - Ensure that `accept_message()` is used **only after** proper validations to prevent gas draining attacks.
-    - Verify the implementation of `recv_external`.
-  - **Preventing Freezing and Deletion:**
-    - What mechanisms are in place to prevent the contract from being **frozen** or **deleted**?
+- **Partial Execution of Transactions:**
+  - What happens if a transaction is **partially executed** due to gas exhaustion?
+  - How does the contract handle partial execution?
+- **Entry Points:**
+  - Identify all **entry points** of the contract.
+- **Input Data Processing:**
+  - How are **input data** and incoming messages processed?
+  - Are incoming errors appropriately handled?
+- **Authorization Checks:**
+  - Are there **authorization checks** for all functions and message handlers?
+- **Contract Design and Centralization:**
+  - Examine the contract structure for any unnecessary **centralization**.
+- **External Message Handling:**
+  - How does the contract handle **external messages**?
+  - Ensure that `accept_message()` is used **only after** proper validations to prevent gas draining attacks.
+  - Verify the implementation of `recv_external`.
+- **Preventing Freezing and Deletion:**
+  - What mechanisms are in place to prevent the contract from being **frozen** or **deleted**?
 
 ## Asynchronous Execution
 
@@ -183,7 +184,7 @@
   - If a developer creates an optional variable or field, they should use its functionality by referring to a null value somewhere in the code.
   - Otherwise, the optional type should be removed to simplify and optimize the code.
 
-## Additional Recommendations
+## Best Practices
 
 - **Magic numbers, flags, and constants:**
   - Replace magic numbers with named constants for clarity and ease of maintenance.
